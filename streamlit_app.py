@@ -5,21 +5,17 @@ st.set_page_config(page_title="Kalkulator składki na prezent 🎁", page_icon="
 
 st.title("🎈 Kalkulator składki na prezent")
 
-# 💰 Hardkodowane kwoty
 values = [500, 500, 999, 999]
 
-# Liczenie średniej
 n = len(values)
 total = sum(values)
 avg = total / n
 
-# Liczenie duplikatów (np. 2x500)
 counter = Counter(values)
 formatted_values = ", ".join(
     [f"{count}x{int(val)}" if count > 1 else f"{int(val)}" for val, count in counter.items()]
 )
 
-# Sekcja prezentacji
 st.markdown("---")
 st.markdown("### 📘 Wzór na średnią arytmetyczną")
 st.latex(r"\text{Średnia} = \frac{a_1 + a_2 + \ldots + a_n}{n}")
@@ -33,7 +29,6 @@ st.markdown("---")
 st.markdown(f"### 💰 Kwoty uczestników: {formatted_values}")
 st.markdown(f"### 📊 Obecna kwota to: **{avg:.2f} zł**")
 
-# Zaokrąglenie do najbliższego progu
 thresholds = [500, 800, 999]
 closest = min(thresholds, key=lambda x: abs(x - avg))
 st.markdown(f"### 🎁 Zatem kupimy voucher za: **{closest} zł**")
