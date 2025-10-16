@@ -32,3 +32,7 @@ st.markdown(f"### 📊 Obecna kwota to: **{avg:.2f} zł**")
 thresholds = [500, 800, 999]
 closest = min(thresholds, key=lambda x: abs(x - avg))
 st.markdown(f"### 🎁 Zatem kupimy voucher za: **{closest} zł**")
+
+
+st.markdown("---")
+st.markdown("**PS.** Jak jesteś **Marcinkiem**, [kliknij tu](https://www.youtube.com/watch?v=YhJeQ__tcBI) 😏")
